@@ -25,6 +25,7 @@
             scene = new THREE.Scene();
             scene.background = new THREE.Color(0x000000);
             camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight, 1, 5000);
+
             camera.rotation.y = 45/180*Math.PI;
             camera.position.x = 500;
             camera.position.y = 300;
@@ -45,19 +46,19 @@
             const controls = new THREE.OrbitControls(camera, renderer.domElement)
             controls.enableDamping = true
             const l1 = new THREE.PointLight( 0xff0000, 1, 100 );
-            l1.position.set( -50, 30, 10 );
+            l1.position.set( -150, 30, 10 );
             scene.add( l1 );
 
             const l2 = new THREE.PointLight( 0xff0000, 1, 100 );
-            l2.position.set( -30, 50, 10 );
+            l2.position.set( -230, 50, 110 );
             scene.add( l2 );
 
             const l3 = new THREE.PointLight( 0xff0000, 1, 100 );
-            l3.position.set( 0, 40, 50 );
+            l3.position.set( 0, 140, 150 );
             scene.add( l3 );
 
             const l4 = new THREE.PointLight( 0xff0000, 1, 100 );
-            l4.position.set( -90, 0, 10 );
+            l4.position.set( -90, 10, 210 );
             scene.add( l4 );
 
             
