@@ -4,102 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D-Drone with Threejs</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./assets/three.min.js"></script>
-    <script src="./assets/GLTFLoader.js"></script> 
-    <script src="./assets/OrbitControls.js"></script> 
+    <title>Digital marketing guy :D </title>
+    <script src="https://cdn.tailwindcss.com"></script> 
 </head>
 <body>
     <div class="lg:content-auto">
-        <h1 class="underline text-5xl font-bold text-center">
-            3d Drone model with threejs
-        </h1>
-        <div id="model"></div>
+        <div class="container">
+            <div class="sketchfab-embed-wrapper" style="width:100vw; height:100vh; overflow:hidden;"> <iframe title="Digital Marketer" style="overflow:hidden; width:100vw; height:100vh;" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/240b1575c197468baee42833e7c35b97/embed?autostart=1&autospin=1&dnt=1"> </iframe></div>
+        </div>
     </div>
 
-    <script type="text/javascript">
-        let scene, camera, renderer; 
-
-        function initModel(){
-            scene = new THREE.Scene();
-            scene.background = new THREE.Color(0x000000);
-            camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight, 1, 5000);
-
-            camera.rotation.y = 45/180*Math.PI;
-            camera.position.x = 500;
-            camera.position.y = 300;
-            camera.position.z = 3000; 
-            
-            hLight = new THREE.AmbientLight(0xd7d7d7, 100);
-            scene.add(hLight);
-
-            directionalLight = new THREE.DirectionalLight(0xc4c4c4, 0.9);
-            directionalLight.position.set(0,1,0);
-            directionalLight.castShadow = true;
-            scene.add(directionalLight);
-
-            renderer = new THREE.WebGLRenderer({antialias:true});
-            renderer.setSize(window.innerWidth, window.innerHeight)
-            document.body.appendChild(renderer.domElement)
-
-            const controls = new THREE.OrbitControls(camera, renderer.domElement)
-            controls.enableDamping = true
-            const l1 = new THREE.PointLight( 0xff0000, 1, 100 );
-            l1.position.set( -250, 30, 910 );
-            scene.add( l1 );
-
-            const l2 = new THREE.PointLight( 0xff0000, 1, 100 );
-            l2.position.set( -430, 150, 10 );
-            scene.add( l2 );
-
-            const l3 = new THREE.PointLight( 0xff0000, 1, 100 );
-            l3.position.set( 0, 240, 550 );
-            scene.add( l3 );
-
-            const l4 = new THREE.PointLight( 0xff0000, 1, 100 );
-            l4.position.set( -120, 10, 310 );
-            scene.add( l4 );
-
-            
-
-            const spotLight = new THREE.SpotLight( 0xffffff );
-            spotLight.position.set( 200, 6000, 1500 );
-
-            spotLight.castShadow = true;
-
-            spotLight.shadow.mapSize.width = 1004;
-            spotLight.shadow.mapSize.height = 2024;
-
-            spotLight.shadow.camera.near = 200;
-            spotLight.shadow.camera.far = 1000;
-            spotLight.shadow.camera.fov = 300;
-
-            scene.add( spotLight );
-
-            const gltfLoader = new THREE.GLTFLoader();
-            gltfLoader.load(
-                './assets/model/scene.gltf',
-                function(m){
-                    drone = m.scene.children[0];
-                    drone.scale.set(100,100,100);
-                    scene.add(m.scene);
-                    animate();
-                }
-            );
-
-           
-        }
-
-        function animate(){
-            requestAnimationFrame(animate);
-            renderer.render(scene, camera);
-
-        }
-
-        initModel();
-
-
-    </script>
+ 
 </body>
 </html>
